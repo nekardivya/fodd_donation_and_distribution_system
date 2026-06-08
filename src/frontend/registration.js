@@ -1,25 +1,50 @@
 import React from 'react';
 import { useState } from 'react';
+import './registration.css';
 
-function registration(){
+function Registration(){
+
+    const [formData, setFormData] = useState({
+        username: '',
+        email: '',
+        phone: '',
+        organizationType: '',
+        address: '',
+        password: '',
+        confirmPassword: ''
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Handle form submission logic here
+    };
+
     return (
-        <div>
+        <form onSubmit={handleSubmit} className="registration-form" >
             <h1>Welcome to Registration </h1>
             <label>
                 Username:
-                <input type="text" name="username" required/>
+                <input type="text" name="username" value={formData.username} onChange={handleChange} required/>
             </label>
             <label>
                 Email:
-                <input type="email" name="email" required />
+                <input type="email" name="email" value={formData.email} onChange={handleChange} required />
             </label>
             <label>
                 Phone Number:
-                <input type="tel" name="phone" required />
+                <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
             </label>
             <label>
                 Organization Type *
-                <select name="Organization Type" required>
+                <select name="organizationType" value={formData.organizationType} onChange={handleChange}    required>
                     <option value="">Select Organization Type</option>
                     <option value="ngo">NGO</option>
                     <option value="restaurant">Restaurant</option>
@@ -31,20 +56,20 @@ function registration(){
             </label>
             <label>
                 Address:
-                <input type="text" name="address" required />
+                <input type="text" name="address" value={formData.address} onChange={handleChange} required />
             </label>
             <label>
                 Password:
-                <input type="password" name="password" required />
+                <input type="password" name="password" value={formData.password} onChange={handleChange} required />
             </label>
             <label>
                 Confirm Password:
-                <input type="password" name="confirmPassword" required />
+                <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} required />
             </label>
             <button type="submit">Register</button>
-            <p>Already have an account? <a href="/login">Login here</a></p>
-        </div>
+            <p>Already have an account? <a href="/login">Login</a></p>
+        </form>
     );
 };
 
-export default registration;
+export default Registration;

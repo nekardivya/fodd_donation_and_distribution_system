@@ -1,11 +1,14 @@
 import React from 'react';
-import Home from './frontend/home';
+import Navbar from './frontend/navbar';
+
 import './App.css';
 
 function App() {
   return (
     <div>
-      <Home/>
+      <h1>Food Donation App</h1>
+      <Navbar />
+
     </div>
   );
 }
