@@ -1,0 +1,25 @@
+/* .navdiv{
+    display:flex;
+    flex-direction:column;
+    align-items:left;
+    background-color:rgb(12, 215, 12);
+
+} */
+.headnav{
+    display:flex;
+    flex-direction:row;
+    gap:20px;
+    margin:10px;
+    padding:10px;
+    background-color:rgb(42, 216, 255);
+    border-radius: 8px;
+    width: auto; 
+    text-decoration: none;
+}
+
+.headnav a{
+    text-decoration: none;
+    color:black;
+    font-size:18px;
+    align-items:center;
+}

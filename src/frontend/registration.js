@@ -28,21 +28,22 @@ function Registration(){
     };
 
     return (
-        <form onSubmit={handleSubmit} className="registration-form" >
-            <h1>Welcome to Registration </h1>
-            <label>
+    <div className="logdiv">
+        <form onSubmit={handleSubmit} className="logform" >
+            <h1 className="regh1">Welcome to Registration </h1>
+            <label className="loglabel" >
                 Username:
-                <input type="text" name="username" value={formData.username} onChange={handleChange} required/>
+                <input type="text"  className="loginput" name="username" value={formData.username} onChange={handleChange} required/>
             </label>
-            <label>
+            <label className="loglabel">
                 Email:
-                <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+                <input type="email"  className="loginput" name="email" value={formData.email} onChange={handleChange} required />
             </label>
-            <label>
+            <label className="loglabel">
                 Phone Number:
-                <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
+                <input type="tel"  className="loginput" name="phone" value={formData.phone} onChange={handleChange} required />
             </label>
-            <label>
+            <label className="loglabel">
                 Organization Type *
                 <select name="organizationType" value={formData.organizationType} onChange={handleChange}    required>
                     <option value="">Select Organization Type</option>
@@ -54,22 +55,25 @@ function Registration(){
                     <option value="individual">Individual Donor</option>
                 </select>
             </label>
-            <label>
+            <label className="loglabel">
                 Address:
-                <input type="text" name="address" value={formData.address} onChange={handleChange} required />
+                <input type="text"  className="loginput" name="address" value={formData.address} onChange={handleChange} required />
             </label>
-            <label>
+            <label className="loglabel">
                 Password:
-                <input type="password" name="password" value={formData.password} onChange={handleChange} required />
+                <input type="password"  className="loginput" name="password" value={formData.password} onChange={handleChange} required />
             </label>
-            <label>
+            <label className="loglabel">
                 Confirm Password:
-                <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} required />
+                <input type="password"  className="loginput" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} required />
             </label>
-            <button type="submit">Register</button>
+            <button type="submit" className="logbutton">
+                Register
+            </button>
             <p>Already have an account? <a href="/login">Login</a></p>
         </form>
-    );
-};
+    </div>
+);  
+}
 
 export default Registration;
